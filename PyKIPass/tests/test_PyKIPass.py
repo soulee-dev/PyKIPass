@@ -1,6 +1,6 @@
 import unittest
 import os
-from PyKIPass import PyKIPass
+from PyKIPass import *
 from PyKIPass.exceptions import *
 
 
@@ -8,7 +8,11 @@ class PyKIPassTest(unittest.TestCase):
     def setUp(self):
         print(os.environ.get("KI_PASS_ID"), os.environ.get("KI_PASS_PASSWORD"))
 
-        self.KIPass = PyKIPass.KIPass(os.environ.get("KI_PASS_ID"), os.environ.get("KI_PASS_PASSWORD"))
+        self.KIPass = KIPass(username=os.environ.get("KI_PASS_ID"), password=os.environ.get("KI_PASS_PASSWORD"))
+
+    def test_exception_login(self):
+        with self.assertRaises(ResponseIsNotSuccess):
+            KIPass(username="", password="")
 
     def test_get_customer_count_on_day(self):
         self.assertTrue(self.KIPass.get_customer_count_on_day(date="20220107").get("success"))

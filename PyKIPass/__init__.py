@@ -1,1 +1,1 @@
-import PyKIPass.PyKIPass
+from PyKIPass.PyKIPass import *

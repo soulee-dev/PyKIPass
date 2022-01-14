@@ -12,26 +12,34 @@ class KIPass:
         self.urls = URLs()
 
         # Authentication
-        self.auth = None
         self.uuid = str(uuid.uuid4()).upper()
 
-    def __login(self):
+        payload = {
+            "usr_id": self.username,
+            "passwd": self.password,
+            "run_version": "1.3.0",
+            "os_type": "iOS",
+            "udid": self.uuid
+        }
 
-        if not self.auth:
-            payload = {
-                "usr_id": self.username,
-                "passwd": self.password,
-                "run_version": "1.3.0",
-                "os_type": "iOS",
-                "udid": self.uuid
-            }
+        req = requests.post(url=self.urls.login_url(), json=payload)
 
-            r = requests.post(url=self.urls.login_url(), json=payload)
-            self.auth = r.headers.get("Authorization")
-            self.business_id = r.json()["data"]["str_id"]
+        json_data = req.json()
+
+        # Exception handling
+        if not req.ok:
+            raise RequestIsNotOkay
+
+        if not json_data.get("success"):
+            raise ResponseIsNotSuccess(f"Request is not okay: {json_data.get('msg')}")
+
+        if not json_data.get("data"):
+            raise ResponseIsNotSuccess(f"Response is not success: {json_data.get('msg')}")
+
+        self.auth = req.headers.get("Authorization")
+        self.business_id = json_data["data"]["str_id"]
 
     def __get_data(self, url, json):
-        self.__login()
         headers = {"Authorization": self.auth}
         req = requests.post(url=url, json=json, headers=headers)
 
@@ -42,10 +50,10 @@ class KIPass:
             raise RequestIsNotOkay
 
         if not json_data.get("success"):
-            raise ResponseIsNotSuccess
+            raise ResponseIsNotSuccess(f"Request is not okay: {json_data.get('msg')}")
 
         if not json_data.get("data"):
-            raise ResponseIsNotSuccess
+            raise ResponseIsNotSuccess(f"Response is not success: {json_data.get('msg')}")
 
         return json_data
 
@@ -67,7 +75,6 @@ class KIPass:
         return self.__get_data(url=self.urls.customer_count_on_two_week_url(), json=payload)
 
     def verify_qr(self, parsed_qr_code):
-        self.__login()
         date = datetime.now().strftime("%Y%m%d%H%M%S")
 
         payload = {

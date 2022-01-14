@@ -1,8 +1,6 @@
 class RequestIsNotOkay(Exception):
-    def __init__(self):
-        super().__init__("Request is not okay")
+    pass
 
 
 class ResponseIsNotSuccess(Exception):
-    def __init__(self):
-        super().__init__("Response is not success")
+    pass
