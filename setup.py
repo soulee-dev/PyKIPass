@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='PyKIPass',
-    version='1.1.0',
+    version='1.2.0',
     license='MIT',
     author='alus20x',
     author_email='alus20x@gmail.com',
