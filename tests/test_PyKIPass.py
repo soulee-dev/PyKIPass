@@ -22,7 +22,8 @@ class PyKIPassTest(unittest.TestCase):
             self.KIPass.get_customer_count_on_day(date="")
 
     def test_get_customer_count_on_two_week(self):
-        self.assertTrue(self.KIPass.get_customer_count_on_two_week(start_date="20211219", end_date="20220102")[0].total_customer_count >= 0)
+        self.assertTrue(self.KIPass.get_customer_count_on_two_week(start_date="20211219",
+                                                                   end_date="20220102")[0].total_customer_count >= 0)
 
     def test_exception_verify_qr(self):
         with self.assertRaises(ResponseIsNotSuccess):
@@ -31,4 +32,3 @@ class PyKIPassTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
