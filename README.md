@@ -22,6 +22,24 @@
   
 </p>
 
+<p align="center">
+QR체크인 API를 이용한 특정 가계의 손님 수 통계
+  </p>
+<table>
+   <tr>
+    <th>요일별 손님수 </th>
+  </tr>
+    <tr>
+    <td><img src="pictures/customer_by_week_day_graph.png" alt="Customer pass by weekday"></td>
+  </tr>
+     <tr>
+    <th>시간대별 손님수</th>
+  </tr>
+   <tr>
+    <td><img src="pictures/customer_by_time_graph.png" alt="Customer pass by time"></td>
+  </tr>
+ <table>
+
 
 ## Legal Disclaimer
 **서비스에 무리가 갈정도로 요청하지 마세요.**
@@ -59,11 +77,70 @@ pip install PyKIPass
 
 ### 특정 날짜의 고객수 불러오기
 ```python
-> 
+> kipass.get_customer_count_on_day(date="20220107")
+CustomerCountOnDay()
 ```
 
-### 특정 기간의 고객수 불러오기
+### 2주간 기간의 고객수 불러오기
+```python
+> kipass.get_customer_count_on_two_week(start_date="20211219", end_date="20220102")
+CustomerCountOnTwoWeek[]
+```
 
 ### QR코드 인증하기
 ```python
+> kipass.verify_qr(parsed_qr_code="....")
+VerifyQR
 ```
+
+## Objects
+
+### User
+```python
+> kipass.user.[parameter]
+```
+   
+- boss_name
+- is_enabled
+- address_detail
+- is_transferred
+- is_async
+- version
+- is_boss
+- biz_no_count
+- authed_phone_number
+- phone_number
+- business_register_number
+- username
+- os_type
+- business_name
+- new_terms_yn
+- name
+- str_use_yn
+- process_type
+- business_id
+- address
+- uuid
+- business_type
+
+### CustomerCountOnDay
+
+- total_customer_count
+- vaccinated_customer_count
+- fully_vaccinated_customer_count
+- dates
+- time
+
+### CustomerCountOnTwoWeek
+- total_customer_count
+- vaccinated_customer_count
+- fully_vaccinated_customer_count
+- dates
+   
+### VerifyQR
+- voice
+- msg
+- vaccine_type
+- vaccine_code
+- background_color
+- success
