@@ -26,6 +26,11 @@ pip install PyKIPass
 #### Security Considerations
 아이디, 비밀번호는 환경변수를 이용해 저장하는것이 좋습니다.
 
+```python
+> import os
+> kipass = KIPass(username=os.environ.get("KI_PASS_ID"), password=os.environ.get("KI_PASS_PASSWORD"))
+```
+
 
 ### 특정 날짜의 고객수 불러오기
 ```python
