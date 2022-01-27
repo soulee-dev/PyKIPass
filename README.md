@@ -7,13 +7,20 @@
 </p>
 <hr>
 
-
-
-# PyKIPass
-
-![GitHub](https://img.shields.io/badge/license-CC--BY--NC--4.0-orange?style=flat-square)
-![PyPI](https://img.shields.io/pypi/v/PyKIPass?style=flat-square)
-
+<p align="center">
+  <a href="https://github.com/alus20x/PyKIPass/blob/main/LICENSE"
+    ><img
+      src="https://img.shields.io/badge/license-CC--BY--NC--4.0-orange?style=flat-square"
+      alt="repo license"
+  /></a>
+    <a href="https://pypi.org/project/PyKIPass"
+    ><img
+      src="https://img.shields.io/pypi/v/PyKIPass?style=flat-square"
+      alt="pypi"
+  /></a>
+  
+  
+</p>
 
 
 ## Legal Disclaimer
