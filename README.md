@@ -22,6 +22,24 @@
   
 </p>
 
+<p align="center">
+QR체크인 API를 이용한 특정 가계의 손님 수 통계
+  </p>
+<table>
+   <tr>
+    <th>요일별 손님수 </th>
+  </tr>
+    <tr>
+    <td><img src="pictures/customer_by_week_day_graph.png" alt="Customer pass by weekday"></td>
+  </tr>
+     <tr>
+    <th>시간대별 손님수</th>
+  </tr>
+   <tr>
+    <td><img src="pictures/customer_by_time_graph.png" alt="Customer pass by time"></td>
+  </tr>
+ <table>
+
 
 ## Legal Disclaimer
 **서비스에 무리가 갈정도로 요청하지 마세요.**
