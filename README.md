@@ -1,3 +1,8 @@
+<p align="center">
+<img src="pictures/logo.png" height=400px width=400px>  
+</p>
+<hr>
+
 # PyKIPass
 
 ![GitHub](https://img.shields.io/github/license/alus20x/PyKIPass?style=flat-square)
