@@ -41,7 +41,7 @@ pip install PyKIPass
 ```
 
 #### Security Considerations
-아이디, 비밀번호는 환경변수를 이용해 저장하는것이 좋습니다.
+아이디, 비밀번호는 환경변수를 이용해 저장하는것이 보안상 좋습니다.
 
 ```python
 > import os
