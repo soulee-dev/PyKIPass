@@ -77,11 +77,72 @@ pip install PyKIPass
 
 ### 특정 날짜의 고객수 불러오기
 ```python
-> 
+> kipass.get_customer_count_on_day(date="20220107")
+CustomerCountOnDay()
 ```
 
-### 특정 기간의 고객수 불러오기
+### 2주간 기간의 고객수 불러오기
+```python
+> kipass.get_customer_count_on_two_week(start_date="20211219", end_date="20220102")
+CustomerCountOnTwoWeek[]
+```
 
 ### QR코드 인증하기
 ```python
+> kipass.verify_qr(parsed_qr_code="....")
+VerifyQR
 ```
+
+## Objects
+
+### User
+```python
+> kipass.user.[parameter]
+```
+   
+- boss_name
+- is_enabled
+- address_detail
+- is_transferred
+- is_async
+- version
+- is_boss
+- biz_no_count
+- authed_phone_number
+- phone_number
+- business_register_number
+- username
+- os_type
+- business_name
+- new_terms_yn
+- name
+- str_use_yn
+- process_type
+- business_id
+- address
+- uuid
+- business_type
+
+### CustomerCountOnDay
+
+- total_customer_count
+- vaccinated_customer_count
+- fully_vaccinated_customer_count
+- dates
+- time
+
+### CustomerCountOnTwoWeek
+- total_customer_count
+- vaccinated_customer_count
+- fully_vaccinated_customer_count
+- dates
+   
+### VerifyQR
+- voice
+- msg
+- vaccine_type
+- vaccine_code
+- background_color
+- success
+   
+### VerifyQR
