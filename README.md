@@ -144,5 +144,3 @@ VerifyQR
 - vaccine_code
 - background_color
 - success
-   
-### VerifyQR
