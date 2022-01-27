@@ -23,6 +23,21 @@
 </p>
 
 <p align="center">
+QR체크인 API를 이용한 현 시각 기준 손님수 예측 오버레이
+   </p>
+   
+<table>
+   <tr>
+    <th>현재시각 기준 손님수 / 지난 데이터 기준 예측 손님수</th>
+  </tr>
+    <tr>
+    <td><img src="pictures/customer_pass_overlay.png" alt="Customer pass overlay"></td>
+  </tr>
+ <table>
+
+
+   </br>
+<p align="center">
 QR체크인 API를 이용한 특정 가계의 손님 수 통계
   </p>
 <table>
@@ -92,6 +107,9 @@ CustomerCountOnTwoWeek[]
 > kipass.verify_qr(parsed_qr_code="....")
 VerifyQR
 ```
+   
+## Examples
+[examples](/examples)
 
 ## Objects
 
