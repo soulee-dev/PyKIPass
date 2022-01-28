@@ -78,7 +78,7 @@ pip install PyKIPass
 
 ### Login
 ```python
-> kipass = KIPass("USERNAME", "PASSWORD")
+> kipass = KIPass(username="USERNAME", password="PASSWORD")
 ```
 
 #### Security Considerations
