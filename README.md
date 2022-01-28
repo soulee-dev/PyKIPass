@@ -109,7 +109,8 @@ VerifyQR
 ```
    
 ## Examples
-[examples](/examples)
+[Graphing](/examples/customer%20pass%20graph)
+[Overlay](/examples/customer%20pass%20overlay)
 
 ## Objects
 
